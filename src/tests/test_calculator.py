@@ -14,6 +14,6 @@ def test_app():
     assert my_calculator.multiplication(2,2) == 4
     assert my_calculator.division(6,2) == 3
     assert my_calculator.division(6,0) == "Erreur : division par zéro"
-    assert my_calculator.addition(5,6) == 43 #test renvoyant volontairement une erreur 
+    #assert my_calculator.addition(5,6) == 43 #test renvoyant volontairement une erreur 
     
 # TODO: ajoutez les tests
