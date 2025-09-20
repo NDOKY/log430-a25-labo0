@@ -26,19 +26,22 @@ jobs:
         run: | 
           python -m pytest 
 
-# deploy:
-#   runs-on: ubuntu-latest
-#   needs: test
-#   steps:
-#     - name: Deploiment sur la VM
-#       uses: appleboy/ssh-action@v0.1.6
-#       with: 
-#         host: ${{ secrets.VM_HOST }}
-#         username: ${{ secrets.VM_USER }}
-#         key: ${{ secrets.VM_SSH_KEY }}
-#         script: |
-#           cd log430-a25-labo0
-#           git pull origin main
-#           pip install -r requirements.txt
-#           systemctl restart calculator.py
+      - name: Deploiment sur la VM
+        run: |
+        uses: appleboy/ssh-action@v0.1.6
+        with: 
+          host: ${{ secrets.VM_HOST }}
+          username: ${{ secrets.VM_USER }}
+          key: ${{ secrets.VM_SSH_KEY }}
+          script: |
+            cd log430-a25-labo0
+            git pull origin main
+            pip install -r requirements.txt
+            systemctl restart calculator.py
+
+#deploy:
+  #runs-on: ubuntu-latest
+  #needs: test
+  #steps:
+    
 
