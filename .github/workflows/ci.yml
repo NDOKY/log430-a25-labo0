@@ -27,7 +27,6 @@ jobs:
           python -m pytest 
 
       - name: Deploiment sur la VM
-        run: |
         uses: appleboy/ssh-action@v0.1.6
         with: 
           host: ${{ secrets.VM_HOST }}
